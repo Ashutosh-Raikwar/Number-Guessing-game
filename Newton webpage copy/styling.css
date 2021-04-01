@@ -1,0 +1,52 @@
+
+
+.card-body{
+    display: inline;
+    height: 10%;
+    width: 10%;
+  }
+  .social {
+    border: none;
+  }
+  .icon{
+    right: 15%;
+    
+  }
+  .box{
+    overflow: auto;
+    display: inline;
+    position:static;
+    text-align: center;
+    margin: 1px;
+    padding: 5%;
+    width: 20%;
+    border-width: 1px;
+    border-radius: 7px;
+    border: solid;
+    background-color: white;
+  }
+  .box:hover{
+   box-shadow: 7px rgba(126, 126, 129, 0.863);;
+  }
+  .box-2{
+    background-image: linear-gradient(to right ,#43bad8, #16457E);
+    display: inline;
+    position:static;
+    text-align: center;
+    margin: 2px 3px;
+    padding: 5% 3%;
+    width: 20%;
+    border: 0.5px;
+    border-radius: 7px;
+    border: solid;
+    
+  }
+  .btn{
+    border-radius: 30px; 
+  }
+  #dropdownMenuButton1{
+    border-radius: 5px;
+    border: none;
+  }
+
+  
