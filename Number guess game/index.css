@@ -1,0 +1,103 @@
+:root{
+    --green:#29bb89;
+    --red:#e40017;
+    --range:#EF2917;
+    --background:#a1ffce;
+    --background-2:#faffd1;
+    --gradient-1:#7F7FD5;
+    --gradient-2:#86A8E7;
+    --gradient-3:#91EAE4;
+    --border:#f7b733;
+}
+
+html{
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 80vh;
+    margin: 0 auto;
+    background: radial-gradient(var(--gradient-1),var(--gradient-2),var(--gradient-3));
+}
+
+main{
+    text-align: center;
+    background: linear-gradient(var(--background),var(--background-2));
+    border:double var(--border);
+    border-width: 0 8px 8px 8px;
+    min-height: 80vh;
+    border-radius: 0 0 3rem 3rem;
+    padding: 1rem;
+    color:black;
+}
+
+h2{
+    font-size: 2rem;
+    margin: 8rem 0;
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    background-color: var(--green);
+    padding: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+button:last-child{
+    background-color: var(--red);
+    border-radius: 0 0 1rem 1rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+input{
+    border: 1px solid lightgray;
+    background-color: transparent;
+    margin: 2rem;
+    padding: 1rem 0;
+    width: 16rem;
+    text-align: center;
+}
+
+#range{
+    display: flex;
+    background-color: var(--green);
+    height: 50px;
+    padding: 0;
+    margin: 0 0 4rem 0;
+}
+
+#low #high{
+    background-color: #EF2917;
+}
+
+#space{
+    background-color: #29bb89;
+}
+
+#rangeOutput{
+    font-size: 1.6rem;
+}
+
+.info{
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+#Game_Area{
+    display: none;
+}
