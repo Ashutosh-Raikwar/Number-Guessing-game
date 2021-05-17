@@ -19,6 +19,7 @@ html{
 body{
     width: 80vh;
     margin: 0 auto;
+    font-size: medium;
     background: radial-gradient(var(--gradient-1),var(--gradient-2),var(--gradient-3));
 }
 
@@ -101,3 +102,4 @@ input{
 #Game_Area{
     display: none;
 }
+
