@@ -1,5 +1,7 @@
 var ComputerGuess;
 var userGuesses= [];
+var attempts=0;
+var maxGuesses;
 
 function init(){
     ComputerGuess = Math.floor(Math.random()*100+1);
@@ -14,29 +16,41 @@ function startGameView(){
 }
 
 function easyMode(){
+    maxGuesses=10;
     startGameView();
 }
 
 function hardMode(){
+    maxGuesses=5;
     startGameView();
 }
 
 function compareGuess(){
     const userGuess = Number(document.getElementById("inputbox").value);
     userGuesses.push(" " + userGuess);
-    document.getElementById("guesses").innerText = userGuesses;
 
-    if(userGuess > ComputerGuess){
-        document.getElementById("textOutput").innerHTML = "Your guess is too high";
-        document.getElementById("inputbox").value = ""; 
-    }
-    else if(userGuess < ComputerGuess){
-        document.getElementById("textOutput").innerHTML = "Your guess is too low";
-        document.getElementById("inputbox").value = ""; 
+    attempts++;
+    document.getElementById("guesses").innerText = userGuesses;
+    document.getElementById("inputbox").value = "";
+    
+    if(attempts < maxGuesses){
+        if(userGuess > ComputerGuess){
+            document.getElementById("textOutput").innerHTML = "Your guess is too high";
+        }
+        else if(userGuess < ComputerGuess){
+            document.getElementById("textOutput").innerHTML = "Your guess is too low"; 
+        }
+        else{
+            document.getElementById("textOutput").innerHTML = "Correct! You got it in " + attempts +" Attempts";
+        }    
     }
     else{
-        document.getElementById("textOutput").innerHTML = "Correct! You got in ";
+        if(userGuess > ComputerGuess || userGuess < ComputerGuess){
+            document.getElementById("textOutput").innerHTML = "!!! You LOSE !!! The number was " + ComputerGuess;
+        }
+        else{
+            document.getElementById("textOutput").innerHTML = "Correct! You got it in " + attempts +" Attempts";
+        }
     }
-
     
 }
