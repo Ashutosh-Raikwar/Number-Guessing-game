@@ -82,7 +82,7 @@ input{
 }
 
 #low #high{
-    background-color: #EF2917;
+    background-color: var(--range);
 }
 
 #space{

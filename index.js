@@ -3,6 +3,33 @@ var userGuesses= [];
 var attempts=0;
 var maxGuesses;
 
+let low =1;
+let high = 100;
+
+function updateRange(){
+    const rangeOutput = document.getElementById("rangeOutput");
+    rangeOutput.innerText = `${low} - ${high}`;
+
+    const lowValue = document.getElementById("low");
+    lowValue.style.flex = low + "%";
+
+    const spaceValue = document.getElementById("space");
+    spaceValue.style.flex = high - low + "%";
+
+    const highValue = document.getElementById("high");
+    highValue.style.flex = 100 - high + "%"; 
+    
+}
+
+function newGame(){
+    window.location.reload();
+}
+
+function gameEnded(){
+    document.getElementById("newGameButton").style.display = "inline";
+    document.getElementById("inputbox").setAttribute("readonly","readonly");
+}
+
 function init(){
     ComputerGuess = Math.floor(Math.random()*100+1);
     console.log(ComputerGuess);
@@ -35,22 +62,27 @@ function compareGuess(){
     
     if(attempts < maxGuesses){
         if(userGuess > ComputerGuess){
+            high = userGuess;
             document.getElementById("textOutput").innerHTML = "Your guess is too high";
         }
         else if(userGuess < ComputerGuess){
+            low = userGuess;
             document.getElementById("textOutput").innerHTML = "Your guess is too low"; 
         }
         else{
             document.getElementById("textOutput").innerHTML = "Correct! You got it in " + attempts +" Attempts";
+            gameEnded();
         }    
     }
     else{
         if(userGuess > ComputerGuess || userGuess < ComputerGuess){
             document.getElementById("textOutput").innerHTML = "!!! You LOSE !!! The number was " + ComputerGuess;
+            gameEnded();
         }
         else{
             document.getElementById("textOutput").innerHTML = "Correct! You got it in " + attempts +" Attempts";
+            gameEnded();
         }
     }
-    
+    updateRange();  
 }
