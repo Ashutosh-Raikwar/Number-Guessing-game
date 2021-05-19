@@ -9,6 +9,8 @@ let high = 100;
 function updateRange(){
     const rangeOutput = document.getElementById("rangeOutput");
     rangeOutput.innerText = `${low} - ${high}`;
+    rangeOutput.style.marginLeft =low + "%";
+    rangeOutput.style.marginRight =100 - high +"%";
 
     const lowValue = document.getElementById("low");
     lowValue.style.flex = low + "%";
@@ -62,11 +64,17 @@ function compareGuess(){
     
     if(attempts < maxGuesses){
         if(userGuess > ComputerGuess){
-            high = userGuess;
+            
+            if(userGuess < high){
+                high = userGuess;
+            }
             document.getElementById("textOutput").innerHTML = "Your guess is too high";
         }
         else if(userGuess < ComputerGuess){
-            low = userGuess;
+            
+            if(userGuess > low){
+                low = userGuess;
+            }
             document.getElementById("textOutput").innerHTML = "Your guess is too low"; 
         }
         else{

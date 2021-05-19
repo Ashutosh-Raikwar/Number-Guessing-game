@@ -86,7 +86,7 @@ input{
 }
 
 #space{
-    background-color: #29bb89;
+    background-color: var(--green);
 }
 
 #rangeOutput{
@@ -103,3 +103,7 @@ input{
     display: none;
 }
 
+#newGameButton{
+    border-radius: 1rem;
+    background-color: var(--gradient-1);
+}
