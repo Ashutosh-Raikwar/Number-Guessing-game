@@ -34,7 +34,6 @@ function gameEnded(){
 
 function init(){
     ComputerGuess = Math.floor(Math.random()*100+1);
-    console.log(ComputerGuess);
     document.getElementById("Game_Area").style.display = "none";
     document.getElementById("newGameButton").style.display = "none";
 }
